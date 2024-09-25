@@ -1,6 +1,7 @@
 
 import { Home } from './views/Home.js';
-// ... import other views
+import { Chat } from './views/Chat.js';
+import { Error } from './views/Error.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
 const el = document.getElementById("root");
@@ -8,7 +9,8 @@ const el = document.getElementById("root");
 // Define your routes and their associated views
 const routes = {
   '/': Home,
-  // ...
+  '/chat': Chat,
+  '/error': Error
 };
 
 // Assign the routes
@@ -19,9 +21,10 @@ window.addEventListener("DOMContentLoaded", () => {
   setRootEl(el);
   onURLChange();
 
-  // TODO Nose donde poner esta funcion ni como usarla
-  // Handle URL changes
-  window.addEventListener('popstate', ({objetivo}) => {
-  onURLChange(/* location */);
 });
+
+
+// Handle URL changes
+window.addEventListener('popstate', ({objetivo}) => {
+  onURLChange(/* location */);
 });
