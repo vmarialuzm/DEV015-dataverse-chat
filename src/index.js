@@ -19,12 +19,12 @@ setRoutes(routes);
 // Set the root element where views will be rendered
 window.addEventListener("DOMContentLoaded", () => {
   setRootEl(el);
-  onURLChange();
+  onURLChange(window.location);
 
 });
 
 
 // Handle URL changes
 window.addEventListener('popstate', ({objetivo}) => {
-  onURLChange(/* location */);
+  onURLChange(window.location);
 });

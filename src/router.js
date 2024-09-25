@@ -24,7 +24,7 @@ const renderView = (pathname, props={}) => {
   rootEl.innerHTML = ''
   // find the correct view in ROUTES for the pathname
   // in case not found render the error view, IMPLEMENTAR VISTA 404
-  const viewRender = ROUTES[pathname] || ROUTES['/404'];
+  const viewRender = ROUTES[pathname] || ROUTES['/error'];
   // render the correct view passing the value of props
   const component = viewRender(props)
   // add the view element to the DOM root element
