@@ -17,15 +17,15 @@ describe('filterData', () => {
 describe('sortData', () => {
 
   it('ordena los datos en orden descendente', () => {
-    expect(sortData(fakeData, 'name', 'desc')).toEqual([
+    expect(sortData(fakeData, 'name', 'desc')).toEqual(
       fakeDataDesc
-    ]);
+    );
   });
 
   it('ordena los datos en orden ascendente', () => {
-    expect(sortData(fakeData, 'name', 'asc')).toEqual([
+    expect(sortData(fakeData, 'name', 'asc')).toEqual(
       fakeDataAsc
-    ]);
+    );
   });
 });
 

@@ -1,6 +1,6 @@
 import { navigateTo } from "../router.js";
 
-export function Error(props) {
+export function Error() {
   const ErrorEl = document.createElement('div');
   ErrorEl.innerHTML = `
     <h1>¡Error 404!</h1>

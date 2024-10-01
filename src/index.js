@@ -27,4 +27,5 @@ window.addEventListener("DOMContentLoaded", () => {
 // Handle URL changes
 window.addEventListener('popstate', ({objetivo}) => {
   onURLChange(window.location);
+  console.log(objetivo)
 });
