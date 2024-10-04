@@ -4,6 +4,7 @@ import { renderItems } from "../components/Card.js";
 import { renderHeader } from "../components/Navbar.js";
 import { renderFooter } from "../components/Footer.js";
 import { renderFilters } from "../components/Filters.js";
+import { renderStatistics } from "../components/Statistics.js";
 
 export function Home(props) {
   // Crear el contenedor principal de la vista
@@ -14,6 +15,7 @@ export function Home(props) {
 
   const main = document.createElement('main');
   main.appendChild(renderFilters())
+  main.appendChild(renderStatistics());
   main.appendChild(renderItems(data));
   viewEl.appendChild(main)
 
