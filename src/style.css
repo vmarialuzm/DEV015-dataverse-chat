@@ -3,9 +3,38 @@ body {
     background: linear-gradient(#ffafcc, #bde0fe);
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
 #headerTitle {
-    text-align: center;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#headerLogo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 #contenedorFiltrosOrdenamiento{
@@ -77,9 +106,5 @@ footer {
     text-align: right;
 }
 
-/* @media (max-width: 1250px) {
-    body {
-        background: red;
-    }
-} */
+
   
