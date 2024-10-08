@@ -26,7 +26,9 @@ export const renderItems = (data) => {
         
         buttonCard.addEventListener('click', () => {
             navigateTo('/chat', 
-            { name: element.name, 
+            { 
+              id: element.id,
+              name: element.name, 
               imagen: element.imageUrl,
               pais: element.facts.country,
               description: element.shortDescription

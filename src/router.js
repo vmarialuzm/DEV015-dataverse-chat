@@ -33,8 +33,13 @@ const renderView = (pathname, props={}) => {
 } 
 
 export const navigateTo = (pathname, props={}) => {
+  // contruir el query string si hay props
+  const queryString = Object.keys(props).length > 0
+   ? '?' + new URLSearchParams(props).toString()
+   : '';
+
   // update window history with pushState
-  window.history.pushState({}, pathname, window.location.origin + pathname);
+  window.history.pushState({}, pathname, window.location.origin + pathname + queryString);
   // render the view with the pathname and props
   renderView(pathname, props);
 }
