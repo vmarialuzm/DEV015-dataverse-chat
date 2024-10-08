@@ -3,6 +3,7 @@ import { Home } from './views/Home.js';
 import { Chat } from './views/Chat.js';
 import { Error } from './views/Error.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
+import { ApiKey } from './views/ApiKey.js';
 
 const el = document.getElementById("root");
 
@@ -10,6 +11,7 @@ const el = document.getElementById("root");
 const routes = {
   '/': Home,
   '/chat': Chat,
+  '/apiKey': ApiKey,
   '/error': Error
 };
 

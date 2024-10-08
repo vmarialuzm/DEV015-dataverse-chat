@@ -1,6 +1,6 @@
 body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: linear-gradient(#ffafcc, #bde0fe);
+    /* background: linear-gradient(#ffafcc, #bde0fe); */
 }
 
 header {
@@ -106,5 +106,43 @@ footer {
     text-align: right;
 }
 
+/* *************** API KEY ***************** */
+
+#apiKeyEl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#apiKeyEl h1 {
+    font-size: 2rem; /* Tamaño de fuente proporcional */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+#apiKeyEl input {
+    width: 50%; /* Ajusta el ancho proporcionalmente */
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px; /* Espacio inferior */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#apiKeyEl button {
+    width: 50%; /* Ajusta el ancho proporcionalmente */
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#apiKeyEl button:hover {
+    background-color: #0056b3; /* Cambia el color al hacer hover */
+}
 
   

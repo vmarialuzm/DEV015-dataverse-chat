@@ -78,6 +78,8 @@ export function Home(props) {
     contenedorCards.replaceChildren(renderItems(data));
   });
 
+  // evento click de una card que me lleve a su chat, aca si necesita props
+
   return viewEl;
 }
   
