@@ -1,3 +1,5 @@
+import { navigateTo } from "../router.js";
+
 export const renderItems = (data) => {
     const sectionCards = document.createElement('section');
     sectionCards.id = 'contenedorCards';
@@ -21,10 +23,19 @@ export const renderItems = (data) => {
 
         const buttonCard = document.createElement('button');
         buttonCard.textContent = 'Chat';
-        // forEach de cada boton
-        newLi.appendChild(buttonCard);
-    })
+        
+        buttonCard.addEventListener('click', () => {
+            navigateTo('/chat', 
+            { name: element.name, 
+              imagen: element.imageUrl,
+              pais: element.facts.country,
+              description: element.shortDescription
+            });
+        });
 
-    sectionCards.appendChild(newUl)
+        newLi.appendChild(buttonCard);
+    });
+
+    sectionCards.appendChild(newUl);
     return sectionCards;
 };
