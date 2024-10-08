@@ -18,6 +18,11 @@ export const renderItems = (data) => {
         <p itemprop="shortDescription"><strong>Descripción Corta:</strong> ${element.shortDescription}</p>
         `
         newUl.appendChild(newLi);
+
+        const buttonCard = document.createElement('button');
+        buttonCard.textContent = 'Chat';
+        // forEach de cada boton
+        newLi.appendChild(buttonCard);
     })
 
     sectionCards.appendChild(newUl)

@@ -1,3 +1,5 @@
+import { navigateTo } from "../router.js";
+
 export const renderHeader = () => {
     const header = document.createElement('header');
 

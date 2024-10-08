@@ -11,7 +11,7 @@ const el = document.getElementById("root");
 const routes = {
   '/': Home,
   '/chat': Chat,
-  '/apiKey': ApiKey,
+  '/apikey': ApiKey,
   '/error': Error
 };
 

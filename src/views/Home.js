@@ -10,6 +10,7 @@ import { filterData, sortData, computeStats } from "../lib/dataFunctions.js";
 export function Home(props) {
   // Crear el contenedor principal de la vista
   const viewEl = document.createElement('div');
+  viewEl.id = 'viewEl';
 
   // Renderiza el encabezado y añádelo al contenedor principal
   viewEl.appendChild(renderHeader());
