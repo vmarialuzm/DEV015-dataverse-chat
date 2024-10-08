@@ -1,0 +1,172 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #FFC107;
+}
+
+#headerTitle {
+    display: flex;
+    align-items: center;
+}
+
+#headerLogo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#contenedorFiltrosOrdenamiento{
+    display: flex;
+    /* cuando sea mobile display: block*/
+    justify-content: space-between;
+    padding: 20px 70px;
+    border-top: 1px solid #8d99ae; /* Línea arriba del div */
+    border-bottom: 1px solid #8d99ae; /* Línea abajo del div */
+}
+
+#estadisticas {
+    padding-left: 70px;
+}
+
+#contenedorCards {
+    padding: 10px 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.tourist-site-item {
+    width: 270px;
+    height: 400px;
+    list-style: none;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    transition: transform 250ms;
+}
+
+li:hover {
+    background-color: #FFC107;
+    transform: translateY(-10px);
+  }
+
+li div {
+    font-weight: bold;
+}
+
+img {
+    border-radius: 10px;
+}
+
+select {
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #FF5722;
+    transition: opacity 1.25;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+footer {
+    text-align: right;
+}
+
+#viewEl {
+    background-color: #F5F5DC;
+}
+
+/* *************** API KEY ***************** */
+
+#apiKeyEl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #F5F5DC;
+}
+
+#apiKeyEl h1 {
+    font-size: 2rem; /* Tamaño de fuente proporcional */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+#apiKeyEl input {
+    width: 50%; /* Ajusta el ancho proporcionalmente */
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px; /* Espacio inferior */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#apiKeyEl button {
+    width: 50%; /* Ajusta el ancho proporcionalmente */
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#apiKeyEl button:hover {
+    background-color: #0056b3; /* Cambia el color al hacer hover */
+}
+
+/* *************** CHAT ***************** */
+
+#chatEl {
+    display: flex;
+    height: 100vh;
+}
+
+#chatSection {
+    width: 50%;
+    background-color: #F5F5DC;
+}
+
+#chatSection button {
+    background-color: #007BFF;
+}
+
+#profileSection {
+    width: 50%;
+    text-align: center;
+}

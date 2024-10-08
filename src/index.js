@@ -3,6 +3,7 @@ import { Home } from './views/Home.js';
 import { Chat } from './views/Chat.js';
 import { Error } from './views/Error.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
+import { ApiKey } from './views/ApiKey.js';
 
 const el = document.getElementById("root");
 
@@ -10,6 +11,7 @@ const el = document.getElementById("root");
 const routes = {
   '/': Home,
   '/chat': Chat,
+  '/apikey': ApiKey,
   '/error': Error
 };
 
@@ -27,4 +29,5 @@ window.addEventListener("DOMContentLoaded", () => {
 // Handle URL changes
 window.addEventListener('popstate', ({objetivo}) => {
   onURLChange(window.location);
+  console.log(objetivo)
 });
