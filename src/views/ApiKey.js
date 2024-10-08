@@ -1,4 +1,5 @@
 import { navigateTo } from "../router.js";
+import { setApiKey, getApiKey } from "../lib/apiKey.js";
 
 export function ApiKey() {
   const apiKeyEl = document.createElement('div');
@@ -18,7 +19,10 @@ export function ApiKey() {
   // evento click y redirige a home
   apiKeyButton.addEventListener('click', () => {
     const apiKeyValue = document.getElementById('apiKeyInput').value;
-    console.log('API KEY guardada:', apiKeyValue);
+
+    // Guardar la API Key en el Local Storage
+    setApiKey(apiKeyValue);
+
     navigateTo("/")
   });
 
