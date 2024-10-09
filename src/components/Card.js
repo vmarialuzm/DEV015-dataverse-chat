@@ -15,7 +15,7 @@ export const renderItems = (data) => {
 
         newLi.innerHTML = `
         <img src="${element.imageUrl}" alt="">
-        <div itemprop="name">Nombre: ${element.name}</div>
+        <p itemprop="name"><strong>Nombre:</strong> ${element.name}</p>
         <p itemprop="country"><strong>País:</strong> ${element.facts.country}</p>
         <p itemprop="shortDescription"><strong>Descripción Corta:</strong> ${element.shortDescription}</p>
         `
@@ -31,7 +31,8 @@ export const renderItems = (data) => {
               name: element.name, 
               imagen: element.imageUrl,
               pais: element.facts.country,
-              description: element.shortDescription
+              description: element.description,
+              unesco: element.facts.unescoWorldHeritage
             });
         });
 

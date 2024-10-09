@@ -53,16 +53,20 @@ export function Chat(props) {
   const profileName = document.createElement('h3');
   profileName.textContent = props.name;
 
-  const profilePais = document.createElement('p');
+  const profilePais = document.createElement('h4');
   profilePais.textContent = props.pais; 
 
   const profileShortDescription = document.createElement('p');
   profileShortDescription.textContent = props.description;
 
+  const profileUnesco = document.createElement('p');
+  profileUnesco.textContent = `Fue declarada como patrimonio mundial por la Unesco en el año ${props.unesco}.`;
+
   profileSection.appendChild(profilePic);
   profileSection.appendChild(profileName);
   profileSection.appendChild(profilePais);
   profileSection.appendChild(profileShortDescription);
+  profileSection.appendChild(profileUnesco);
 
   // Botton de regresar al home
   const homeButton = document.createElement('button');
