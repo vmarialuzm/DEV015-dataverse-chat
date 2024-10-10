@@ -27,7 +27,7 @@ export function Chat(props) {
   const sendButton = document.createElement('button');
   sendButton.textContent = 'Enviar';
 
-  sendButton.addEventListener('click', () => {
+  sendButton.addEventListener('click', async() => {
     const message = chatInput.value;
     if (message.trim() !== '') {
       const newMessage = document.createElement('p');
@@ -43,14 +43,7 @@ export function Chat(props) {
 
       chatMessages.appendChild(messageOpenAi);
 
-      communicateWithOpenAI(message, props.name)
-        .then(responseMessage => {
-          messageOpenAi.textContent = responseMessage;
-        })
-        .catch(error => {
-          messageOpenAi.textContent = 'Error al obtener respuesta';
-          console.error('Error:', error);
-        });
+      messageOpenAi.textContent = await communicateWithOpenAI(message, props.name);
 
       chatInput.value = '';
     }

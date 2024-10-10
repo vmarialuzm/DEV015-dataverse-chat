@@ -1,11 +1,10 @@
 import { getApiKey } from './apiKey.js';
 
-export const communicateWithOpenAI = (message, systemContent = "You are a helpful assistant.") => {
+export const communicateWithOpenAI = async(message, systemContent = "You are a helpful assistant.") => {
 
     const apiKey = getApiKey();
     const urlOpenIA = 'https://api.openai.com/v1/chat/completions';
-
-    return fetch(urlOpenIA, {
+    const options = {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${apiKey}`,
@@ -18,14 +17,16 @@ export const communicateWithOpenAI = (message, systemContent = "You are a helpfu
                 { role: "user", content: message },
             ],
         }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.choices[0].message.content);
-        return data.choices[0].message.content;
-    })   
-    .catch(error => {
-        console.log('Error:', error);
-        throw error;
-    }); 
+    }
+
+    try {
+        const response = await fetch(urlOpenIA, options)
+        const result = await response.json()
+        console.log(result.choices[0].message.content)
+        return result.choices[0].message.content
+
+    } catch (error) {
+        console.error(error);
+        return 'Debes ingresar la apikey';
+    }
 };
