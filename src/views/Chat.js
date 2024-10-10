@@ -1,4 +1,5 @@
 import { navigateTo } from "../router.js";
+import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
 export function Chat(props) {
   const chatEl = document.createElement('div');
@@ -29,10 +30,28 @@ export function Chat(props) {
   sendButton.addEventListener('click', () => {
     const message = chatInput.value;
     if (message.trim() !== '') {
-      const newMessage = document.createElement('div');
+      const newMessage = document.createElement('p');
       newMessage.className = 'chatMessage';
       newMessage.textContent = message;
+
       chatMessages.appendChild(newMessage);
+
+      //usar aqui la funcion de openai
+      const messageOpenAi = document.createElement('p');
+      messageOpenAi.className = 'chatOpenAi';
+      messageOpenAi.textContent = 'Escribiendo...'
+
+      chatMessages.appendChild(messageOpenAi);
+
+      communicateWithOpenAI(message, props.name)
+        .then(responseMessage => {
+          messageOpenAi.textContent = responseMessage;
+        })
+        .catch(error => {
+          messageOpenAi.textContent = 'Error al obtener respuesta';
+          console.error('Error:', error);
+        });
+
       chatInput.value = '';
     }
   });
