@@ -8,7 +8,7 @@ export function Error() {
   `
   const homeButton = document.createElement('button');
   homeButton.textContent = 'Ir al home';
-  homeButton.addEventListener('click', () => navigateTo("/", { name: "Carlos", id: 100 }))
+  homeButton.addEventListener('click', () => navigateTo("/"))
 
   ErrorEl.appendChild(homeButton);
 

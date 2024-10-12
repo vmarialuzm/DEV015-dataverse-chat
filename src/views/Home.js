@@ -30,12 +30,6 @@ export function Home(props) {
   main.appendChild(contenedorCards);
 
   viewEl.appendChild(main)
-
-  const chatButton = document.createElement('button');
-  chatButton.textContent = 'Ir al chat';
-  chatButton.addEventListener('click', () => navigateTo("/chat", { name: "Xochitl" }));
-  viewEl.appendChild(chatButton);
-
   viewEl.appendChild(renderFooter())
 
   // Integración con las funciones de filtrado

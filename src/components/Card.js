@@ -1,3 +1,5 @@
+import { navigateTo } from "../router.js";
+
 export const renderItems = (data) => {
     const sectionCards = document.createElement('section');
     sectionCards.id = 'contenedorCards';
@@ -13,7 +15,7 @@ export const renderItems = (data) => {
 
         newLi.innerHTML = `
         <img src="${element.imageUrl}" alt="">
-        <div itemprop="name">Nombre: ${element.name}</div>
+        <p itemprop="name"><strong>Nombre:</strong> ${element.name}</p>
         <p itemprop="country"><strong>País:</strong> ${element.facts.country}</p>
         <p itemprop="shortDescription"><strong>Descripción Corta:</strong> ${element.shortDescription}</p>
         `
@@ -21,10 +23,22 @@ export const renderItems = (data) => {
 
         const buttonCard = document.createElement('button');
         buttonCard.textContent = 'Chat';
-        // forEach de cada boton
-        newLi.appendChild(buttonCard);
-    })
+        
+        buttonCard.addEventListener('click', () => {
+            navigateTo('/chat', 
+            { 
+              id: element.id,
+              name: element.name, 
+              imagen: element.imageUrl,
+              pais: element.facts.country,
+              description: element.description,
+              unesco: element.facts.unescoWorldHeritage
+            });
+        });
 
-    sectionCards.appendChild(newUl)
+        newLi.appendChild(buttonCard);
+    });
+
+    sectionCards.appendChild(newUl);
     return sectionCards;
 };
