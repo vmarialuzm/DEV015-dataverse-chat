@@ -5,10 +5,6 @@ export function Chat(props) {
   const chatEl = document.createElement('div');
   chatEl.id = 'chatEl';
 
-  // chatEl.innerHTML = `
-  //   <h1>Bienvenido a la página de Chat personal, ${props.name}!</h1>
-  // `;
-
   // Sección izquierda de mensajes
   const chatSection  = document.createElement('div');
   chatSection.id = 'chatSection';

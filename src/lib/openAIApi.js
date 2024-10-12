@@ -27,6 +27,6 @@ export const communicateWithOpenAI = async(message, systemContent = "You are a h
 
     } catch (error) {
         console.error(error);
-        return 'Debes ingresar la apikey';
+        return error;
     }
 };

@@ -6,3 +6,5 @@ describe('getApiKey', () => {
     await expect(communicateWithOpenAI('Hola', 'Machu Picchu').resolves.toBe('¡Hola! ¿En qué puedo ayudarte hoy?'))
   });
 });
+
+// hacer mocks, fetch global, mock fetch
