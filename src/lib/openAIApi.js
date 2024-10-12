@@ -1,6 +1,6 @@
 import { getApiKey } from './apiKey.js';
 
-export const communicateWithOpenAI = async(message, systemContent = "You are a helpful assistant.") => {
+export const communicateWithOpenAI = async(message, props) => {
 
     const apiKey = getApiKey();
     const urlOpenIA = 'https://api.openai.com/v1/chat/completions';
@@ -13,7 +13,7 @@ export const communicateWithOpenAI = async(message, systemContent = "You are a h
         body: JSON.stringify({
             model: "gpt-4o",
             messages: [
-                { role: "system", content: systemContent}, //pasar un nombre de mi dataset
+                { role: "system" , content: `Eres ${props.name} y aquí hay una breve descripcion de quien eres ${props.shortDescription}, tienes que comportarte y responder como ${props.name}.`}, //pasar un nombre de mi dataset
                 { role: "user", content: message },
             ],
         }),
