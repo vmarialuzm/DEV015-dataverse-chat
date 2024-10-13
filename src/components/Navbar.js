@@ -1,52 +1,52 @@
 import { navigateTo } from "../router.js";
 
 export const renderHeader = () => {
-    const header = document.createElement('header');
+  const header = document.createElement('header');
 
-    const titleHeader = document.createElement('div');
-    titleHeader.id = 'headerTitle';
+  const titleHeader = document.createElement('div');
+  titleHeader.id = 'headerTitle';
 
-    const logo = document.createElement('img');
-    logo.src = 'media/mundo.jpg';
-    logo.alt = 'logo';
-    logo.id = 'headerLogo';
+  const logo = document.createElement('img');
+  logo.src = 'media/mundo.jpg';
+  logo.alt = 'logo';
+  logo.id = 'headerLogo';
 
-    const title = document.createElement('h1');
-    title.textContent = 'Sitios Turísticos del Mundo';
-    
-    titleHeader.appendChild(logo);
-    titleHeader.appendChild(title);
-    header.appendChild(titleHeader);
+  const title = document.createElement('h1');
+  title.textContent = 'Sitios Turísticos del Mundo';
 
-    // pestañas de navegación
-    const opcionesHeader = document.createElement('nav');
-    opcionesHeader.classList.add('nav-tabs');
+  titleHeader.appendChild(logo);
+  titleHeader.appendChild(title);
+  header.appendChild(titleHeader);
 
-    const aHome = document.createElement('a');
-    aHome.textContent = 'Home';
-    aHome.href = '#'; 
-    aHome.classList.add('nav-link');
+  // pestañas de navegación
+  const opcionesHeader = document.createElement('nav');
+  opcionesHeader.classList.add('nav-tabs');
 
-    const aApiKey = document.createElement('a');
-    aApiKey.textContent = 'API KEY';
-    aApiKey.href = '#';
-    aApiKey.classList.add('nav-link');
+  const aHome = document.createElement('a');
+  aHome.textContent = 'Home';
+  aHome.href = '#'; 
+  aHome.classList.add('nav-link');
 
-    opcionesHeader.appendChild(aHome);
-    opcionesHeader.appendChild(aApiKey);
+  const aApiKey = document.createElement('a');
+  aApiKey.textContent = 'API KEY';
+  aApiKey.href = '#';
+  aApiKey.classList.add('nav-link');
 
-    header.appendChild(opcionesHeader);
+  opcionesHeader.appendChild(aHome);
+  opcionesHeader.appendChild(aApiKey);
 
-    // Añadir manejadores de eventos para la navegación
-    aHome.addEventListener('click', (e) => {
-        e.preventDefault();
-        navigateTo('/');
-    });
+  header.appendChild(opcionesHeader);
 
-    aApiKey.addEventListener('click', (e) => {
-        e.preventDefault();
-        navigateTo('/apikey');
-    });
+  // Añadir manejadores de eventos para la navegación
+  aHome.addEventListener('click', (e) => {
+    e.preventDefault();
+    navigateTo('/');
+  });
 
-    return header;
+  aApiKey.addEventListener('click', (e) => {
+    e.preventDefault();
+    navigateTo('/apikey');
+  });
+
+  return header;
 }

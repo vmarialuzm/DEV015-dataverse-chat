@@ -1,6 +1,6 @@
 // test/apiKey.spec.js
 
-import { getApiKey, setApiKey } from '../src/lib/apiKey.js';
+//import { getApiKey, setApiKey } from '../src/lib/apiKey.js';
 
 describe('getApiKey', () => {
 
@@ -12,6 +12,6 @@ describe('getApiKey', () => {
 describe('setApiKey', () => {
 
   it('debería establecer correctamente la API Key', () => {
-   // Desarrolla el test correspondiente aquí
+    // Desarrolla el test correspondiente aquí
   });
 });
