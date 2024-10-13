@@ -22,11 +22,11 @@ export const communicateWithOpenAI = async(message, props) => {
   try {
     const response = await fetch(urlOpenIA, options)
     const result = await response.json()
-    console.log(result.choices[0].message.content)
+    //console.log(result.choices[0].message.content)
     return result.choices[0].message.content
 
   } catch (error) {
-    console.error(error);
+    //console.error(error);
     return error;
   }
 };
