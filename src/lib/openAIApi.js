@@ -13,7 +13,7 @@ export const communicateWithOpenAI = async(message, props) => {
     body: JSON.stringify({
       model: "gpt-4o",
       messages: [
-        { role: "system" , content: `Eres ${props.name} y aquí hay una breve descripcion de quien eres ${props.shortDescription}, tienes que comportarte y responder como ${props.name}.`}, //pasar un nombre de mi dataset
+        { role: "system" , content: `Eres ${props.name} y aquí hay una breve descripcion de quien eres ${props.shortDescription}, tienes que comportarte y responder como ${props.name}.`}, //mejorar el promp
         { role: "user", content: message },
       ],
     }),
@@ -21,12 +21,13 @@ export const communicateWithOpenAI = async(message, props) => {
 
   try {
     const response = await fetch(urlOpenIA, options)
+    //console.log(response.status)
     const result = await response.json()
     //console.log(result.choices[0].message.content)
     return result.choices[0].message.content
 
   } catch (error) {
-    //console.error(error);
+    // console.error(error);
     return error;
   }
 };

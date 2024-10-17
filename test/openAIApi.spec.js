@@ -31,8 +31,9 @@ it('debería devolver la respuesta de openAI', async() => {
   expect(fetch).toHaveBeenCalledTimes(1);
 });
 
+
 it('debería devolver el error si OpenAI falla', async() => {
-  fetch.mockImplementationOnce(() => Promise.reject(null));
+  fetch.mockImplementationOnce(() => Promise.reject(new Error('Error en la petición')));
 
   const message = 'Hola';
   const props = {
@@ -40,5 +41,8 @@ it('debería devolver el error si OpenAI falla', async() => {
     shortDescription: 'Maravilla del Mundo'
   }
   const result = await communicateWithOpenAI(message, props);
-  expect(result).toEqual(null);
+  //console.log(result)
+  //console.log(result.message)
+  expect(result.message).toBe('Error en la petición')
 })
+
