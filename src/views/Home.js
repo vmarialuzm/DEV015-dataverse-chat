@@ -1,4 +1,3 @@
-import { navigateTo } from "../router.js";
 import data from "../data/dataset.js"
 import { renderItems } from "../components/Card.js";
 import { renderHeader } from "../components/Navbar.js";
@@ -7,7 +6,7 @@ import { renderFilters } from "../components/Filters.js";
 import { renderStatistics } from "../components/Statistics.js";
 import { filterData, sortData, computeStats } from "../lib/dataFunctions.js";
 
-export function Home(props) {
+export function Home() {
   // Crear el contenedor principal de la vista
   const viewEl = document.createElement('div');
   viewEl.id = 'viewEl';

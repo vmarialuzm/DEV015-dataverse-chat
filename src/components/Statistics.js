@@ -1,6 +1,6 @@
 export const renderStatistics = () => {
-    const sectionStatistics = document.createElement('section');
-    sectionStatistics.id = 'estadisticas';
+  const sectionStatistics = document.createElement('section');
+  sectionStatistics.id = 'estadisticas';
 
-    return sectionStatistics;
+  return sectionStatistics;
 }

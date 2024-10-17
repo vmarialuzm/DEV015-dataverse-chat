@@ -39,7 +39,7 @@ export function Chat(props) {
 
       chatMessages.appendChild(messageOpenAi);
 
-      messageOpenAi.textContent = await communicateWithOpenAI(message, props.name);
+      messageOpenAi.textContent = await communicateWithOpenAI(message, props);
 
       chatInput.value = '';
     }

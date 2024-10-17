@@ -1,5 +1,5 @@
 import { navigateTo } from "../router.js";
-import { setApiKey, getApiKey } from "../lib/apiKey.js";
+import { setApiKey } from "../lib/apiKey.js";
 
 export function ApiKey() {
   const apiKeyEl = document.createElement('div');
